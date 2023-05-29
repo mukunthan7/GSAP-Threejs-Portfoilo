@@ -20,6 +20,11 @@ export const Overlay = () => {
         gsap.to(".overlay", { x: (x - window.innerWidth / 2) / 20, y: (y - window.innerHeight / 2) / 20, duration: 1 })
     })
 
+    window.addEventListener("scroll", () => {
+        const scroll = window.scrollY
+        gsap.to(".overlay", { y: scroll / 20, duration: 1 })
+    })
+
     return (
         <Scroll html>
             <ScrollPages>
